@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --vip-blue: #1a233e; /* Azul de la tarjeta */
-            --vip-gold: #c5a059; /* Dorado del logo */
+            --vip-blue: #1a233e; /* Azul de la tarjeta [cite: 5, 6] */
+            --vip-gold: #c5a059; /* Dorado del logo [cite: 1] */
             --vip-yellow: #ffcc00; /* Franja de diseño */
             --white: #ffffff;
             --gray-light: #f4f7f6;
@@ -31,7 +31,7 @@
         }
 
         .logo-img {
-            max-width: 280px; /* Tamaño optimizado para el logo */
+            max-width: 280px;
             height: auto;
             margin-bottom: 10px;
         }
@@ -73,6 +73,32 @@
             display: block;
         }
 
+        /* --- Botón de Portafolio PDF --- */
+        .pdf-section {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--gray-light);
+        }
+
+        .btn-pdf {
+            background: var(--vip-gold);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+
+        .btn-pdf:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+        }
+
         /* --- Acordeón de Servicios --- */
         .services-dropdown {
             max-width: 600px;
@@ -81,7 +107,7 @@
         }
 
         details {
-            background: var(--gray-light);
+            background: white;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #ddd;
@@ -109,7 +135,7 @@
             gap: 15px;
         }
 
-        /* --- Formulario Lead con GPS --- */
+        /* --- Formulario Lead --- */
         .form-card {
             max-width: 600px;
             margin: 3rem auto;
@@ -161,7 +187,6 @@
 
         .btn-send:hover { background: var(--vip-gold); }
 
-        /* --- Footer --- */
         footer {
             background: #111;
             color: #777;
@@ -207,6 +232,12 @@
     <section class="hero-professional">
         <h1>SONIA POLO PLAZA</h1>
         <span class="cargo-title">Consultora y Profesional Inmobiliaria Internacional</span>
+    </section>
+
+    <section class="pdf-section">
+        <a href="portafoliosonia.pdf" class="btn-pdf" target="_blank">
+            📄 VER PORTAFOLIO COMPLETO (PDF)
+        </a>
     </section>
 
     <div class="services-dropdown">
