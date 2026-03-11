@@ -3,194 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIP LOCATION | Gestión Inmobiliaria</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <title>VIP LOCATION | Sonia Polo Plaza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --vip-purple: #4a3b8b; /* Color inspirado en el logo */
-            --vip-gold: #b59410;
-            --soft-bg: #f8f9fa;
-            --text-dark: #2d2d2d;
+            --vip-blue: #1a233e; /* Azul de la tarjeta */
+            --vip-gold: #c5a059; /* Dorado del logo */
+            --vip-yellow: #ffcc00; /* Franja de diseño */
+            --white: #ffffff;
+            --gray-light: #f4f7f6;
         }
 
         body {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
-            background-color: var(--soft-bg);
-            color: var(--text-dark);
+            background-color: var(--white);
+            color: var(--vip-blue);
         }
 
-        /* --- Header --- */
+        /* --- Header con Logo --- */
         header {
-            background: white;
-            padding: 1.5rem;
+            background: var(--white);
+            padding: 2rem 1rem;
             text-align: center;
-            border-bottom: 3px solid var(--vip-purple);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border-top: 15px solid var(--vip-yellow);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .brand {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--vip-purple);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .brand span { color: var(--vip-gold); }
-
-        .vibras-badge {
-            font-size: 0.7rem;
-            background: #e1f5fe;
-            padding: 4px 10px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 5px;
-        }
-
-        /* --- Services Grid --- */
-        .services-section {
-            padding: 3rem 1rem;
-            text-align: center;
-            background: white;
-        }
-
-        .grid-services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 2rem auto;
-        }
-
-        .service-item {
-            padding: 1rem;
-            border: 1px solid #eee;
-            border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .service-item:hover {
-            border-color: var(--vip-purple);
-            background: #fdfbff;
-        }
-
-        .service-item i {
-            display: block;
-            font-size: 1.5rem;
+        .logo-img {
+            max-width: 280px; /* Tamaño optimizado para el logo */
+            height: auto;
             margin-bottom: 10px;
         }
 
-        /* --- WhatsApp Floating Button --- */
-        .btn-whatsapp {
+        .badge-monteria {
+            background: var(--vip-blue);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* --- Perfil Profesional --- */
+        .hero-professional {
+            background: var(--vip-blue);
+            color: white;
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 6px solid var(--vip-gold);
+        }
+
+        .hero-professional h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cargo-title {
+            color: var(--vip-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* --- Acordeón de Servicios --- */
+        .services-dropdown {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        details {
+            background: var(--gray-light);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        summary {
+            padding: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--vip-blue);
+            font-size: 1.1rem;
+        }
+
+        summary::after { content: "▼"; font-size: 0.8rem; color: var(--vip-gold); }
+
+        .service-grid {
+            padding: 1.5rem;
+            background: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* --- Formulario Lead con GPS --- */
+        .form-card {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
+        .form-card h3 { text-align: center; margin-bottom: 2rem; font-family: 'Montserrat'; }
+
+        .input-box { margin-bottom: 1.5rem; }
+
+        label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 8px; }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .gps-trigger {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+        .btn-send {
+            background: var(--vip-blue);
+            color: white;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .btn-send:hover { background: var(--vip-gold); }
+
+        /* --- Footer --- */
+        footer {
+            background: #111;
+            color: #777;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .vibras-credit {
+            color: white;
+            font-weight: bold;
+            display: block;
+            margin-top: 1.5rem;
+        }
+
+        .wa-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             background: #25d366;
             color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 999;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-        }
-
-        /* --- Main Content --- */
-        .hero {
-            padding: 4rem 1rem;
-            text-align: center;
-            background: linear-gradient(rgba(74, 59, 139, 0.05), rgba(255, 255, 255, 1));
-        }
-
-        .card-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .card-img { height: 220px; background: #ececec; }
-
-        .card-body { padding: 1.5rem; }
-
-        .btn-view {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--vip-purple);
-            color: white;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             text-decoration: none;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-
-        footer {
-            background: var(--vip-purple);
-            color: white;
-            padding: 2rem;
-            text-align: center;
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="brand">VIP <span>LOCATION</span></div>
-        <div style="font-size: 0.8rem; font-weight: 600;">GESTIÓN INMOBILIARIA</div>
-        <div class="vibras-badge">✨ Con la energía de Vibras Positivas</div>
+        <img src="viplocation.PNG" alt="VIP LOCATION" class="logo-img">
+        <br>
+        <div class="badge-monteria">📍 MONTERÍA | WHATSAPP: 300 265 7818</div>
     </header>
 
-    <section class="hero">
-        <h1>Tu próximo capítulo comienza aquí</h1>
-        <p>Soluciones integrales con transparencia y calidez humana.</p>
+    <section class="hero-professional">
+        <h1>SONIA POLO PLAZA</h1>
+        <span class="cargo-title">Consultora y Profesional Inmobiliaria Internacional</span>
     </section>
 
-    <section class="services-section">
-        <h3>Nuestros Servicios Especializados</h3>
-        <div class="grid-services">
-            <div class="service-item">🏠<br>Ventas</div>
-            <div class="service-item">🔑<br>Arriendos</div>
-            <div class="service-item">📊<br>Avalúos</div>
-            <div class="service-item">🤝<br>Asesorías</div>
-            <div class="service-item">🏙️<br>Administración</div>
-            <div class="service-item">💰<br>Hipotecas</div>
-        </div>
-    </section>
-
-    <div class="card-container">
-        <div class="card">
-            <div class="card-img"></div>
-            <div class="card-body">
-                <span style="color: var(--vip-gold); font-weight: bold;">DESTACADO</span>
-                <h3>Apartamento Vista Hermosa</h3>
-                <p>Un espacio diseñado para tu bienestar y el de tu familia.</p>
-                <a href="https://wa.me/573002657818" class="btn-view">Consultar Disponibilidad</a>
+    <div class="services-dropdown">
+        <details>
+            <summary>NUESTROS SERVICIOS ESPECIALIZADOS</summary>
+            <div class="service-grid">
+                <div>🏠 Ventas</div>
+                <div>🔑 Arriendos</div>
+                <div>📊 Avalúos</div>
+                <div>🤝 Asesorías</div>
+                <div>🏙️ Administración</div>
+                <div>💰 Hipotecas</div>
             </div>
-        </div>
+        </details>
     </div>
 
-    <a href="https://wa.me/573002657818" class="btn-whatsapp">
-        💬 ¡Hablemos por WhatsApp!
-    </a>
+    <div class="form-card">
+        <h3>SOLICITAR ASESORÍA</h3>
+        <form id="leadForm">
+            <div class="input-box">
+                <label>Nombre Completo</label>
+                <input type="text" id="nombre" placeholder="Nombre del cliente" required>
+            </div>
+            
+            <div class="input-box">
+                <label>Propiedad / Dirección</label>
+                <input type="text" id="direccion" placeholder="Ej: Apartamento Vista Hermosa">
+                <button type="button" class="gps-trigger" onclick="getGPS()">📍 Adjuntar mi ubicación GPS</button>
+                <p id="gpsLabel" style="font-size: 0.75rem; color: #27ae60; margin: 5px 0;"></p>
+            </div>
+
+            <div class="input-box">
+                <label>Celular</label>
+                <input type="tel" id="celular" placeholder="300 000 0000" required>
+            </div>
+
+            <div class="input-box">
+                <label>Observaciones</label>
+                <textarea id="observaciones" rows="4" placeholder="¿Cómo podemos ayudarle?"></textarea>
+            </div>
+
+            <button type="button" class="btn-send" onclick="sendToSonia()">ENVIAR CONSULTA PROFESIONAL</button>
+        </form>
+    </div>
+
+    <a href="https://wa.me/573002657818" class="wa-float" target="_blank">💬</a>
 
     <footer>
-        <p>VIP LOCATION GESTIÓN INMOBILIARIA</p>
-        <p style="font-size: 0.8rem; opacity: 0.8;">www.viplocation.inmo.co | @viplocation</p>
+        <p>www.viplocation.inmo.co | @viplocation</p>
+        <p>Sonia Polo Plaza - Gestión Inmobiliaria</p>
+        <hr style="width: 50px; border: 1px solid var(--vip-gold); margin: 2rem auto;">
+        <span class="vibras-credit">App desarrollada por VIBRAS POSITIVAS © 2026</span>
+        <p>Derechos de Autor Reservados | Soporte: 3117700431</p>
     </footer>
+
+    <script>
+        let gpsData = "No compartida";
+
+        function getGPS() {
+            const label = document.getElementById('gpsLabel');
+            if (navigator.geolocation) {
+                label.innerText = "Localizando...";
+                navigator.geolocation.getCurrentPosition((pos) => {
+                    gpsData = `https://www.google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}`;
+                    label.innerText = "✅ Ubicación capturada correctamente";
+                }, () => {
+                    label.innerText = "❌ GPS denegado";
+                });
+            }
+        }
+
+        function sendToSonia() {
+            const nom = document.getElementById('nombre').value;
+            const dir = document.getElementById('direccion').value;
+            const cel = document.getElementById('celular').value;
+            const obs = document.getElementById('observaciones').value;
+
+            if(!nom || !cel) { alert("Nombre y celular son obligatorios"); return; }
+
+            const text = `*NUEVA SOLICITUD - VIP LOCATION*%0A%0A` +
+                         `*Cliente:* ${nom}%0A` +
+                         `*Celular:* ${cel}%0A` +
+                         `*Interés:* ${dir}%0A` +
+                         `*GPS:* ${gpsData}%0A` +
+                         `*Notas:* ${obs}`;
+
+            window.open(`https://wa.me/573002657818?text=${text}`, '_blank');
+        }
+    </script>
 
 </body>
 </html>
